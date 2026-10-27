@@ -1,0 +1,638 @@
+:root {
+    --primary: #5b5cf0;
+    --primary-dark: #4546d8;
+    --accent: #8175ff;
+
+    --dark: #0b1020;
+    --text: #202438;
+    --muted: #70788c;
+
+    --white: #ffffff;
+    --light: #f6f7fb;
+    --border: #e7e9f2;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+
+    background: var(--light);
+
+    color: var(--text);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   AUTH
+========================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(91, 92, 240, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(129, 117, 255, 0.12),
+            transparent 35%
+        ),
+        #f7f8fc;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 440px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 60px rgba(20, 24, 50, 0.10);
+}
+
+
+.auth-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    color: white;
+
+    font-size: 23px;
+}
+
+
+.brand-logo {
+    text-align: center;
+
+    color: var(--dark);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+
+.brand-logo i {
+    color: var(--primary);
+
+    margin-right: 7px;
+}
+
+
+.auth-card h2 {
+    text-align: center;
+
+    font-size: 28px;
+
+    font-weight: 750;
+
+    margin-bottom: 8px;
+}
+
+
+.auth-subtitle {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group label i {
+    color: var(--primary);
+
+    margin-right: 5px;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 0 15px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+.form-group input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(91, 92, 240, 0.10);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-btn {
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--accent)
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(91, 92, 240, 0.25);
+}
+
+
+.auth-btn i {
+    margin-right: 7px;
+}
+
+
+/* =========================
+   FOOTER LINK
+========================= */
+
+.auth-footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+}
+
+
+.auth-footer a {
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   DASHBOARD NAVBAR
+========================= */
+
+.dashboard-navbar {
+    min-height: 72px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.dashboard-navbar .container-fluid {
+    max-width: 1250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.dashboard-brand {
+    color: var(--dark);
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+
+.dashboard-brand i {
+    color: var(--primary);
+
+    margin-right: 7px;
+}
+
+
+.dashboard-nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.dashboard-nav-links a {
+    color: #555b6e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.dashboard-nav-links a:hover {
+    color: var(--primary);
+}
+
+
+.welcome-text {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-main {
+    min-height: calc(100vh - 135px);
+
+    padding: 55px 20px;
+}
+
+
+.dashboard-heading {
+    margin-bottom: 35px;
+}
+
+
+.small-heading {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.dashboard-heading h1 {
+    font-size: 38px;
+
+    font-weight: 800;
+
+    margin-top: 7px;
+
+    margin-bottom: 8px;
+}
+
+
+.dashboard-heading p {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.dashboard-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    box-shadow:
+        0 8px 30px rgba(25, 30, 55, 0.05);
+
+    transition: 0.25s;
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(25, 30, 55, 0.10);
+}
+
+
+.card-icon {
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(91, 92, 240, 0.10);
+
+    color: var(--primary);
+
+    font-size: 19px;
+
+    margin-bottom: 22px;
+}
+
+
+.dashboard-card h3 {
+    font-size: 20px;
+
+    font-weight: 750;
+
+    margin-bottom: 10px;
+}
+
+
+.dashboard-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+.dashboard-btn {
+    margin-top: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.dashboard-btn:hover {
+    background: var(--primary-dark);
+
+    color: white;
+}
+
+
+.dashboard-btn.secondary {
+    background: #eef0f6;
+
+    color: #73798b;
+
+    cursor: default;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.dashboard-footer {
+    height: 63px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-top: 1px solid var(--border);
+
+    background: white;
+}
+
+
+.dashboard-footer p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+
+    .dashboard-navbar .container-fluid {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+
+    .dashboard-nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dashboard-heading h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* Create Faculty Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 13px 20px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.20);
+
+    transition: all 0.25s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #4338ca, #4f46e5);
+    transform: translateY(-2px);
+    box-shadow: 0 9px 22px rgba(79, 70, 229, 0.30);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+

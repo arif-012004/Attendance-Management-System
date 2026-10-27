@@ -1,0 +1,632 @@
+
+/* =========================================================
+   ATTENDIFY - VIEW STUDENTS
+   Professional SaaS Student Management
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(99, 102, 241, 0.08),
+            transparent 30%
+        ),
+        #f6f7fb;
+
+    color: #202336;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.dashboard-navbar {
+    height: 72px;
+
+    padding: 0 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid #e8e9f0;
+
+    box-shadow: 0 2px 12px rgba(20, 25, 50, 0.04);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #4f46e5;
+
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -0.3px;
+}
+
+.dashboard-logo i {
+    font-size: 20px;
+}
+
+.dashboard-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    border: 1px solid #e3e4eb;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #5e6375;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    color: #4f46e5;
+
+    border-color: #cfd2ff;
+
+    background: #f7f7ff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.faculty-list-page {
+    width: min(1450px, 100%);
+
+    margin: 0 auto;
+
+    padding: 48px 42px 70px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.faculty-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+.faculty-list-header h1 {
+    margin: 0;
+
+    color: #171a2b;
+
+    font-size: 31px;
+    font-weight: 750;
+
+    letter-spacing: -0.7px;
+}
+
+.faculty-list-header p {
+    margin: 8px 0 0;
+
+    color: #85899b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ADD STUDENT BUTTON
+========================================================= */
+
+.faculty-list-header .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: auto;
+
+    padding: 12px 19px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #6366f1
+    );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 7px 18px rgba(79, 70, 229, 0.20);
+
+    transition: all 0.22s ease;
+}
+
+.faculty-list-header .primary-btn:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 25px rgba(79, 70, 229, 0.27);
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.faculty-table-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #e6e7ee;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 8px rgba(20, 25, 50, 0.025),
+        0 18px 45px rgba(20, 25, 50, 0.065);
+}
+
+
+/* Top gradient line */
+
+.faculty-table-card::before {
+    content: "";
+
+    display: block;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #4f46e5,
+        #6366f1,
+        #8b5cf6
+    );
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.faculty-table {
+    width: 100%;
+
+    min-width: 1080px;
+
+    border-collapse: collapse;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.faculty-table thead {
+    background: #f8f9fc;
+}
+
+.faculty-table th {
+    height: 54px;
+
+    padding: 0 21px;
+
+    border-bottom: 1px solid #e6e7ed;
+
+    color: #777c90;
+
+    font-size: 10.5px;
+    font-weight: 750;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.faculty-table td {
+    height: 74px;
+
+    padding: 11px 21px;
+
+    border-bottom: 1px solid #eff0f4;
+
+    color: #5d6273;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.faculty-table tbody tr {
+    background: #ffffff;
+
+    transition: background 0.18s ease;
+}
+
+.faculty-table tbody tr:hover {
+    background: #fafaff;
+}
+
+.faculty-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   STUDENT PROFILE
+========================================================= */
+
+.faculty-person {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+}
+
+.faculty-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 750;
+
+    box-shadow:
+        0 6px 14px rgba(79, 70, 229, 0.18);
+}
+
+.faculty-person strong {
+    display: block;
+
+    color: #202336;
+
+    font-size: 13.5px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.faculty-person small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #9a9ead;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STUDENT ID
+========================================================= */
+
+.faculty-id-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 10px;
+
+    border: 1px solid #dfe3ff;
+
+    border-radius: 7px;
+
+    background: #f3f4ff;
+
+    color: #4f46e5;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   COURSE BADGE
+========================================================= */
+
+.department-badge {
+    display: inline-flex;
+    align-items: center;
+
+    max-width: 180px;
+
+    padding: 6px 10px;
+
+    border: 1px solid #e5e7ed;
+
+    border-radius: 7px;
+
+    background: #f7f8fa;
+
+    color: #555b6b;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.faculty-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    min-width: 68px;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.action-btn i {
+    font-size: 10px;
+}
+
+
+/* EDIT */
+
+.edit-btn {
+    border: 1px solid #dfe3ff;
+
+    background: #f3f4ff;
+
+    color: #4f46e5;
+}
+
+.edit-btn:hover {
+    border-color: #4f46e5;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(79, 70, 229, 0.18);
+}
+
+
+/* DELETE */
+
+.delete-btn {
+    border: 1px solid #fee0e3;
+
+    background: #fff6f7;
+
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    border-color: #dc2626;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(220, 38, 38, 0.16);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    padding: 85px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: #f0f1ff;
+
+    color: #4f46e5;
+
+    font-size: 25px;
+}
+
+.empty-state h3 {
+    margin: 0 0 7px;
+
+    color: #202336;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.empty-state p {
+    margin: 0 0 23px;
+
+    color: #85899b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-navbar {
+        padding: 0 22px;
+    }
+
+    .faculty-list-page {
+        padding: 35px 22px 55px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-navbar {
+        height: auto;
+
+        padding: 16px;
+
+        gap: 15px;
+
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard-nav-right {
+        justify-content: flex-end;
+    }
+
+    .faculty-list-page {
+        padding: 25px 14px 45px;
+    }
+
+    .faculty-list-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .faculty-list-header .primary-btn {
+        width: 100%;
+    }
+
+    .faculty-list-header h1 {
+        font-size: 27px;
+    }
+
+    .faculty-table-card {
+        border-radius: 13px;
+    }
+}
